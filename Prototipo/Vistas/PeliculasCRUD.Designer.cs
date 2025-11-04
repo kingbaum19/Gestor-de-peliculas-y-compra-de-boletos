@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            txtFechaSalida = new TextBox();
+            txtFechaEstreno = new TextBox();
             label11 = new Label();
             label10 = new Label();
-            comboBox4 = new ComboBox();
+            cmbEstatus = new ComboBox();
             label9 = new Label();
-            button5 = new Button();
-            button4 = new Button();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
+            btnEliminarDatos = new Button();
+            btnModificarDatos = new Button();
+            dgvPeliculas = new DataGridView();
+            btnGuardarPelicula = new Button();
+            btnSubirCaratula = new Button();
+            pbCaratula = new PictureBox();
             label8 = new Label();
-            textBox3 = new TextBox();
+            txtDescripcion = new TextBox();
             label7 = new Label();
-            comboBox3 = new ComboBox();
+            cmbGenero = new ComboBox();
             label6 = new Label();
-            comboBox2 = new ComboBox();
+            cmbIdioma = new ComboBox();
             label5 = new Label();
-            comboBox1 = new ComboBox();
+            cmbClasificacion = new ComboBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtDuracion = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtNombre = new TextBox();
             label2 = new Label();
             panel2 = new Panel();
             label1 = new Label();
@@ -62,8 +62,8 @@
             modificarPelículaToolStripMenuItem = new ToolStripMenuItem();
             listaDePeliculasToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbCaratula).BeginInit();
             panel2.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -72,30 +72,30 @@
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(txtFechaSalida);
+            panel1.Controls.Add(txtFechaEstreno);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(comboBox4);
+            panel1.Controls.Add(cmbEstatus);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnEliminarDatos);
+            panel1.Controls.Add(btnModificarDatos);
+            panel1.Controls.Add(dgvPeliculas);
+            panel1.Controls.Add(btnGuardarPelicula);
+            panel1.Controls.Add(btnSubirCaratula);
+            panel1.Controls.Add(pbCaratula);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtDescripcion);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(comboBox3);
+            panel1.Controls.Add(cmbGenero);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(comboBox2);
+            panel1.Controls.Add(cmbIdioma);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(cmbClasificacion);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(txtDuracion);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(menuStrip1);
@@ -105,19 +105,19 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // textBox5
+            // txtFechaSalida
             // 
-            textBox5.Location = new Point(156, 352);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 28;
+            txtFechaSalida.Location = new Point(156, 352);
+            txtFechaSalida.Name = "txtFechaSalida";
+            txtFechaSalida.Size = new Size(100, 23);
+            txtFechaSalida.TabIndex = 28;
             // 
-            // textBox4
+            // txtFechaEstreno
             // 
-            textBox4.Location = new Point(156, 310);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 27;
+            txtFechaEstreno.Location = new Point(156, 310);
+            txtFechaEstreno.Name = "txtFechaEstreno";
+            txtFechaEstreno.Size = new Size(100, 23);
+            txtFechaEstreno.TabIndex = 27;
             // 
             // label11
             // 
@@ -139,13 +139,13 @@
             label10.TabIndex = 25;
             label10.Text = "Fecha de estreno";
             // 
-            // comboBox4
+            // cmbEstatus
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(131, 450);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(95, 23);
-            comboBox4.TabIndex = 24;
+            cmbEstatus.FormattingEnabled = true;
+            cmbEstatus.Location = new Point(131, 450);
+            cmbEstatus.Name = "cmbEstatus";
+            cmbEstatus.Size = new Size(95, 23);
+            cmbEstatus.TabIndex = 24;
             // 
             // label9
             // 
@@ -157,62 +157,62 @@
             label9.TabIndex = 23;
             label9.Text = "Estatus";
             // 
-            // button5
+            // btnEliminarDatos
             // 
-            button5.Location = new Point(634, 603);
-            button5.Name = "button5";
-            button5.Size = new Size(157, 23);
-            button5.TabIndex = 22;
-            button5.Text = "Eliminar datos";
-            button5.UseVisualStyleBackColor = true;
+            btnEliminarDatos.Location = new Point(634, 603);
+            btnEliminarDatos.Name = "btnEliminarDatos";
+            btnEliminarDatos.Size = new Size(157, 23);
+            btnEliminarDatos.TabIndex = 22;
+            btnEliminarDatos.Text = "Eliminar datos";
+            btnEliminarDatos.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnModificarDatos
             // 
-            button4.Location = new Point(634, 555);
-            button4.Name = "button4";
-            button4.Size = new Size(157, 23);
-            button4.TabIndex = 21;
-            button4.Text = "Modificar datos";
-            button4.UseVisualStyleBackColor = true;
+            btnModificarDatos.Location = new Point(634, 555);
+            btnModificarDatos.Name = "btnModificarDatos";
+            btnModificarDatos.Size = new Size(157, 23);
+            btnModificarDatos.TabIndex = 21;
+            btnModificarDatos.Text = "Modificar datos";
+            btnModificarDatos.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPeliculas
             // 
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 646);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(801, 292);
-            dataGridView1.TabIndex = 20;
+            dgvPeliculas.AllowUserToDeleteRows = false;
+            dgvPeliculas.AllowUserToOrderColumns = true;
+            dgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPeliculas.Location = new Point(29, 646);
+            dgvPeliculas.Name = "dgvPeliculas";
+            dgvPeliculas.ReadOnly = true;
+            dgvPeliculas.Size = new Size(801, 292);
+            dgvPeliculas.TabIndex = 20;
             // 
-            // button2
+            // btnGuardarPelicula
             // 
-            button2.Location = new Point(634, 510);
-            button2.Name = "button2";
-            button2.Size = new Size(157, 23);
-            button2.TabIndex = 18;
-            button2.Text = "Guardar película";
-            button2.UseVisualStyleBackColor = true;
+            btnGuardarPelicula.Location = new Point(634, 510);
+            btnGuardarPelicula.Name = "btnGuardarPelicula";
+            btnGuardarPelicula.Size = new Size(157, 23);
+            btnGuardarPelicula.TabIndex = 18;
+            btnGuardarPelicula.Text = "Guardar película";
+            btnGuardarPelicula.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSubirCaratula
             // 
-            button1.Location = new Point(652, 351);
-            button1.Name = "button1";
-            button1.Size = new Size(139, 23);
-            button1.TabIndex = 17;
-            button1.Text = "Subir carátula";
-            button1.UseVisualStyleBackColor = true;
+            btnSubirCaratula.Location = new Point(652, 351);
+            btnSubirCaratula.Name = "btnSubirCaratula";
+            btnSubirCaratula.Size = new Size(139, 23);
+            btnSubirCaratula.TabIndex = 17;
+            btnSubirCaratula.Text = "Subir carátula";
+            btnSubirCaratula.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pbCaratula
             // 
-            pictureBox1.BackColor = SystemColors.ButtonShadow;
-            pictureBox1.Location = new Point(651, 142);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(139, 204);
-            pictureBox1.TabIndex = 16;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pbCaratula.BackColor = SystemColors.ButtonShadow;
+            pbCaratula.Location = new Point(651, 142);
+            pbCaratula.Name = "pbCaratula";
+            pbCaratula.Size = new Size(139, 204);
+            pbCaratula.TabIndex = 16;
+            pbCaratula.TabStop = false;
+            pbCaratula.Click += pictureBox1_Click;
             // 
             // label8
             // 
@@ -224,13 +224,13 @@
             label8.TabIndex = 15;
             label8.Text = "Carátula";
             // 
-            // textBox3
+            // txtDescripcion
             // 
-            textBox3.Location = new Point(116, 510);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(375, 130);
-            textBox3.TabIndex = 14;
+            txtDescripcion.Location = new Point(116, 510);
+            txtDescripcion.Multiline = true;
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(375, 130);
+            txtDescripcion.TabIndex = 14;
             // 
             // label7
             // 
@@ -242,13 +242,13 @@
             label7.TabIndex = 13;
             label7.Text = "Descripción";
             // 
-            // comboBox3
+            // cmbGenero
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(131, 399);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(95, 23);
-            comboBox3.TabIndex = 12;
+            cmbGenero.FormattingEnabled = true;
+            cmbGenero.Location = new Point(131, 399);
+            cmbGenero.Name = "cmbGenero";
+            cmbGenero.Size = new Size(95, 23);
+            cmbGenero.TabIndex = 12;
             // 
             // label6
             // 
@@ -260,13 +260,13 @@
             label6.TabIndex = 11;
             label6.Text = "Género";
             // 
-            // comboBox2
+            // cmbIdioma
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(131, 264);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 10;
+            cmbIdioma.FormattingEnabled = true;
+            cmbIdioma.Location = new Point(131, 264);
+            cmbIdioma.Name = "cmbIdioma";
+            cmbIdioma.Size = new Size(121, 23);
+            cmbIdioma.TabIndex = 10;
             // 
             // label5
             // 
@@ -278,13 +278,13 @@
             label5.TabIndex = 9;
             label5.Text = "Idioma";
             // 
-            // comboBox1
+            // cmbClasificacion
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(131, 214);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(80, 23);
-            comboBox1.TabIndex = 8;
+            cmbClasificacion.FormattingEnabled = true;
+            cmbClasificacion.Location = new Point(131, 214);
+            cmbClasificacion.Name = "cmbClasificacion";
+            cmbClasificacion.Size = new Size(80, 23);
+            cmbClasificacion.TabIndex = 8;
             // 
             // label4
             // 
@@ -296,12 +296,12 @@
             label4.TabIndex = 7;
             label4.Text = "Clasificación";
             // 
-            // textBox2
+            // txtDuracion
             // 
-            textBox2.Location = new Point(131, 167);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(80, 23);
-            textBox2.TabIndex = 6;
+            txtDuracion.Location = new Point(131, 167);
+            txtDuracion.Name = "txtDuracion";
+            txtDuracion.Size = new Size(80, 23);
+            txtDuracion.TabIndex = 6;
             // 
             // label3
             // 
@@ -313,12 +313,12 @@
             label3.TabIndex = 5;
             label3.Text = "Duración";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(131, 117);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(303, 23);
-            textBox1.TabIndex = 4;
+            txtNombre.Location = new Point(131, 117);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(303, 23);
+            txtNombre.TabIndex = 4;
             // 
             // label2
             // 
@@ -403,8 +403,8 @@
             Text = "Form2";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPeliculas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbCaratula).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             menuStrip1.ResumeLayout(false);
@@ -422,30 +422,30 @@
         private Label label1;
         private Label label2;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtDuracion;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtNombre;
         private Label label8;
-        private TextBox textBox3;
+        private TextBox txtDescripcion;
         private Label label7;
-        private ComboBox comboBox3;
+        private ComboBox cmbGenero;
         private Label label6;
-        private ComboBox comboBox2;
+        private ComboBox cmbIdioma;
         private Label label5;
-        private ComboBox comboBox1;
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Button button2;
+        private ComboBox cmbClasificacion;
+        private Button btnSubirCaratula;
+        private PictureBox pbCaratula;
+        private Button btnGuardarPelicula;
         private ToolStripMenuItem añadirPelículaToolStripMenuItem;
         private ToolStripMenuItem modificarPelículaToolStripMenuItem;
-        private DataGridView dataGridView1;
-        private Button button5;
-        private Button button4;
+        private DataGridView dgvPeliculas;
+        private Button btnEliminarDatos;
+        private Button btnModificarDatos;
         private Label label11;
         private Label label10;
-        private ComboBox comboBox4;
+        private ComboBox cmbEstatus;
         private Label label9;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox txtFechaEstreno;
+        private TextBox txtFechaSalida;
     }
 }

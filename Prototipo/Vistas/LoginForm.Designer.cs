@@ -1,6 +1,6 @@
 ﻿namespace Prototipo
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             label1 = new Label();
             panel1 = new Panel();
             label2 = new Label();
             txtEmail = new TextBox();
-            textBox1 = new TextBox();
+            txtContraseña = new TextBox();
             btnLogin = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            button2 = new Button();
+            lblRegister = new Label();
+            lblRecuperarContraseña = new Label();
+            btnSalir = new Button();
             SuspendLayout();
             // 
             // label1
@@ -78,15 +78,15 @@
             txtEmail.TabIndex = 4;
             txtEmail.Text = "Correo electrónico";
             // 
-            // textBox1
+            // txtContraseña
             // 
-            textBox1.ForeColor = Color.DarkGray;
-            textBox1.Location = new Point(348, 272);
-            textBox1.Name = "textBox1";
-            textBox1.PasswordChar = '*';
-            textBox1.Size = new Size(427, 23);
-            textBox1.TabIndex = 5;
-            textBox1.Text = "Contraseña";
+            txtContraseña.ForeColor = Color.DarkGray;
+            txtContraseña.Location = new Point(348, 272);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.PasswordChar = '*';
+            txtContraseña.Size = new Size(427, 23);
+            txtContraseña.TabIndex = 5;
+            txtContraseña.Text = "Contraseña";
             // 
             // btnLogin
             // 
@@ -98,42 +98,42 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += button1_Click;
             // 
-            // label3
+            // lblRegister
             // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.RoyalBlue;
-            label3.Location = new Point(481, 337);
-            label3.Name = "label3";
-            label3.Size = new Size(163, 15);
-            label3.TabIndex = 7;
-            label3.Text = "¿Eres nuevo? Crea una cuenta";
+            lblRegister.AutoSize = true;
+            lblRegister.ForeColor = Color.RoyalBlue;
+            lblRegister.Location = new Point(481, 337);
+            lblRegister.Name = "lblRegister";
+            lblRegister.Size = new Size(163, 15);
+            lblRegister.TabIndex = 7;
+            lblRegister.Text = "¿Eres nuevo? Crea una cuenta";
             // 
-            // label4
+            // lblRecuperarContraseña
             // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.RoyalBlue;
-            label4.Location = new Point(478, 406);
-            label4.Name = "label4";
-            label4.Size = new Size(166, 15);
-            label4.TabIndex = 8;
-            label4.Text = "¿Se le ha olvido la contraseña?";
-            label4.Click += label4_Click;
+            lblRecuperarContraseña.AutoSize = true;
+            lblRecuperarContraseña.ForeColor = Color.RoyalBlue;
+            lblRecuperarContraseña.Location = new Point(478, 406);
+            lblRecuperarContraseña.Name = "lblRecuperarContraseña";
+            lblRecuperarContraseña.Size = new Size(166, 15);
+            lblRecuperarContraseña.TabIndex = 8;
+            lblRecuperarContraseña.Text = "¿Se le ha olvido la contraseña?";
+            lblRecuperarContraseña.Click += label4_Click;
             // 
-            // button2
+            // btnSalir
             // 
-            button2.BackColor = Color.Transparent;
-            button2.BackgroundImageLayout = ImageLayout.None;
-            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(748, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(106, 39);
-            button2.TabIndex = 9;
-            button2.Text = "Salir";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnSalir.BackColor = Color.Transparent;
+            btnSalir.BackgroundImageLayout = ImageLayout.None;
+            btnSalir.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
+            btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSalir.Location = new Point(748, 0);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(106, 39);
+            btnSalir.TabIndex = 9;
+            btnSalir.Text = "Salir";
+            btnSalir.TextAlign = ContentAlignment.MiddleRight;
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += button2_Click;
             // 
             // Form1
             // 
@@ -141,11 +141,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(854, 561);
-            Controls.Add(button2);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(btnSalir);
+            Controls.Add(lblRecuperarContraseña);
+            Controls.Add(lblRegister);
             Controls.Add(btnLogin);
-            Controls.Add(textBox1);
+            Controls.Add(txtContraseña);
             Controls.Add(txtEmail);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -161,10 +161,10 @@
         private Panel panel1;
         private Label label2;
         private TextBox txtEmail;
-        private TextBox textBox1;
+        private TextBox txtContraseña;
         private Button btnLogin;
-        private Label label3;
-        private Label label4;
-        private Button button2;
+        private Label lblRegister;
+        private Label lblRecuperarContraseña;
+        private Button btnSalir;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Prototipo
 {
-    partial class Form3
+    partial class Placeholder
     {
         /// <summary>
         /// Required designer variable.

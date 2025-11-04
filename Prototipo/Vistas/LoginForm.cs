@@ -1,8 +1,8 @@
 namespace Prototipo
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             Clases.CConexion objetoConexion = new Clases.CConexion();
             objetoConexion.establecerConexion();
@@ -21,7 +21,7 @@ namespace Prototipo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 winAdmin = new Form2();
+            PeliculasCRUD winAdmin = new PeliculasCRUD();
             winAdmin.Show();
         }
 
