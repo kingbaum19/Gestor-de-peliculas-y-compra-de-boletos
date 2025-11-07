@@ -1,3 +1,4 @@
+using Prototipo.Vistas;
 using System;
 using System.Windows.Forms;
 namespace Prototipo
@@ -47,6 +48,14 @@ namespace Prototipo
         {
             Placeholder winAdmin = new Placeholder();
             winAdmin.Show();
+        }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm register = new RegisterForm();
+            register.Show();
+            this.Hide();
+            
         }
     }
 }

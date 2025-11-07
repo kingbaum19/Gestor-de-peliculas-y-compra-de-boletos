@@ -64,12 +64,14 @@
             // lblRegister
             // 
             lblRegister.AutoSize = true;
+            lblRegister.Cursor = Cursors.Hand;
             lblRegister.ForeColor = Color.RoyalBlue;
             lblRegister.Location = new Point(499, 334);
             lblRegister.Name = "lblRegister";
             lblRegister.Size = new Size(163, 15);
             lblRegister.TabIndex = 7;
             lblRegister.Text = "¿Eres nuevo? Crea una cuenta";
+            lblRegister.Click += lblRegister_Click;
             // 
             // lblRecuperarContraseña
             // 
