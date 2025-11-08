@@ -7,8 +7,8 @@ namespace Prototipo
     {
         public LoginForm()
         {
-            Clases.CConexion objetoConexion = new Clases.CConexion();
-            objetoConexion.establecerConexion();
+            MySqlConnection con = CConexion.establecerConexion();
+            con.Open();
             InitializeComponent();
         }
 
