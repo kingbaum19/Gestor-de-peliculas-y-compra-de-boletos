@@ -1,3 +1,5 @@
+using MySql.Data.MySqlClient;
+using Prototipo.Clases;
 using Prototipo.Vistas;
 using System;
 using System.Windows.Forms;
@@ -7,8 +9,10 @@ namespace Prototipo
     {
         public LoginForm()
         {
-            MySqlConnection con = CConexion.establecerConexion();
-            con.Open();
+            MySqlConnection conn = CConexion.establecerConexion();
+            conn.Open();
+           
+
             InitializeComponent();
         }
 
