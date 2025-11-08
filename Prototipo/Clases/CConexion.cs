@@ -26,7 +26,7 @@ namespace Prototipo.Clases
   
                 string cadenaConexion = "server=" + servidor + ";" + "port=" + puerto + ";" + "user id=" + usuario + ";" + "password=" + password + ";" + "database=" + bd + ";";
                 MySqlConnection conexion = new MySqlConnection(cadenaConexion);
-                //MessageBox.Show("Acceso correcto a la base de datos", "Conexión a la base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Acceso correcto a la base de datos", "Conexión a la base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return conexion;
             
 
