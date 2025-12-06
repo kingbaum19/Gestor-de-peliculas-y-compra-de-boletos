@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PeliculasCRUD));
             panel1 = new Panel();
+            dtpFechaSalida = new DateTimePicker();
+            dtpFechaEstreno = new DateTimePicker();
             btnRegresar = new Button();
             txtDescripcion = new Prototipo.Custom_Controls.CustomTextbox();
-            txtFechaSalida = new Prototipo.Custom_Controls.CustomTextbox();
-            txtFechaEstreno = new Prototipo.Custom_Controls.CustomTextbox();
             txtDuracion = new Prototipo.Custom_Controls.CustomTextbox();
             txtNombre = new Prototipo.Custom_Controls.CustomTextbox();
             btnSubirCaratula = new Prototipo.Custom_Controls.CustomButton();
@@ -73,10 +73,10 @@
             panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(dtpFechaSalida);
+            panel1.Controls.Add(dtpFechaEstreno);
             panel1.Controls.Add(btnRegresar);
             panel1.Controls.Add(txtDescripcion);
-            panel1.Controls.Add(txtFechaSalida);
-            panel1.Controls.Add(txtFechaEstreno);
             panel1.Controls.Add(txtDuracion);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(btnSubirCaratula);
@@ -106,6 +106,22 @@
             panel1.Size = new Size(857, 954);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // dtpFechaSalida
+            // 
+            dtpFechaSalida.Format = DateTimePickerFormat.Short;
+            dtpFechaSalida.Location = new Point(156, 346);
+            dtpFechaSalida.Name = "dtpFechaSalida";
+            dtpFechaSalida.Size = new Size(200, 23);
+            dtpFechaSalida.TabIndex = 41;
+            // 
+            // dtpFechaEstreno
+            // 
+            dtpFechaEstreno.Format = DateTimePickerFormat.Short;
+            dtpFechaEstreno.Location = new Point(156, 298);
+            dtpFechaEstreno.Name = "dtpFechaEstreno";
+            dtpFechaEstreno.Size = new Size(200, 23);
+            dtpFechaEstreno.TabIndex = 39;
             // 
             // btnRegresar
             // 
@@ -141,50 +157,6 @@
             txtDescripcion.Texto = "";
             txtDescripcion.UnderlinedStyle = false;
             // 
-            // txtFechaSalida
-            // 
-            txtFechaSalida.BackColor = SystemColors.Window;
-            txtFechaSalida.BorderColor = Color.BlueViolet;
-            txtFechaSalida.BorderFocusColor = SystemColors.MenuHighlight;
-            txtFechaSalida.BorderRadius = 20;
-            txtFechaSalida.BorderSize = 2;
-            txtFechaSalida.Font = new Font("Segoe UI", 10F);
-            txtFechaSalida.ForeColor = SystemColors.GrayText;
-            txtFechaSalida.Location = new Point(156, 349);
-            txtFechaSalida.MaxLength = 32767;
-            txtFechaSalida.Multiline = false;
-            txtFechaSalida.Name = "txtFechaSalida";
-            txtFechaSalida.Padding = new Padding(7);
-            txtFechaSalida.PasswordChar = false;
-            txtFechaSalida.PlaceholderColor = Color.DarkGray;
-            txtFechaSalida.PlaceholderText = "dd/mm/yyyy";
-            txtFechaSalida.Size = new Size(250, 34);
-            txtFechaSalida.TabIndex = 36;
-            txtFechaSalida.Texto = "";
-            txtFechaSalida.UnderlinedStyle = false;
-            // 
-            // txtFechaEstreno
-            // 
-            txtFechaEstreno.BackColor = SystemColors.Window;
-            txtFechaEstreno.BorderColor = Color.BlueViolet;
-            txtFechaEstreno.BorderFocusColor = SystemColors.MenuHighlight;
-            txtFechaEstreno.BorderRadius = 20;
-            txtFechaEstreno.BorderSize = 2;
-            txtFechaEstreno.Font = new Font("Segoe UI", 10F);
-            txtFechaEstreno.ForeColor = SystemColors.GrayText;
-            txtFechaEstreno.Location = new Point(156, 298);
-            txtFechaEstreno.MaxLength = 32767;
-            txtFechaEstreno.Multiline = true;
-            txtFechaEstreno.Name = "txtFechaEstreno";
-            txtFechaEstreno.Padding = new Padding(7);
-            txtFechaEstreno.PasswordChar = false;
-            txtFechaEstreno.PlaceholderColor = Color.DarkGray;
-            txtFechaEstreno.PlaceholderText = "dd/mm/yyyy";
-            txtFechaEstreno.Size = new Size(250, 34);
-            txtFechaEstreno.TabIndex = 35;
-            txtFechaEstreno.Texto = "";
-            txtFechaEstreno.UnderlinedStyle = false;
-            // 
             // txtDuracion
             // 
             txtDuracion.BackColor = SystemColors.Window;
@@ -195,7 +167,7 @@
             txtDuracion.Font = new Font("Segoe UI", 10F);
             txtDuracion.ForeColor = SystemColors.GrayText;
             txtDuracion.Location = new Point(156, 152);
-            txtDuracion.MaxLength = 32767;
+            txtDuracion.MaxLength = 3;
             txtDuracion.Multiline = false;
             txtDuracion.Name = "txtDuracion";
             txtDuracion.Padding = new Padding(7);
@@ -245,6 +217,7 @@
             btnSubirCaratula.Text = "Subir carátula";
             btnSubirCaratula.TextAlign = ContentAlignment.MiddleRight;
             btnSubirCaratula.UseVisualStyleBackColor = false;
+            btnSubirCaratula.Click += btnSubirCaratula_Click;
             // 
             // btnEliminar
             // 
@@ -262,6 +235,7 @@
             btnEliminar.Text = "Eliminar datos";
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -279,6 +253,7 @@
             btnModificar.Text = "Modificar datos";
             btnModificar.TextAlign = ContentAlignment.MiddleRight;
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -296,6 +271,7 @@
             btnGuardar.Text = "Guardar películas";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label11
             // 
@@ -319,7 +295,9 @@
             // 
             // cmbEstatus
             // 
+            cmbEstatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEstatus.FormattingEnabled = true;
+            cmbEstatus.Items.AddRange(new object[] { "En cartelera", "No disponible" });
             cmbEstatus.Location = new Point(156, 435);
             cmbEstatus.Name = "cmbEstatus";
             cmbEstatus.Size = new Size(95, 23);
@@ -345,6 +323,7 @@
             dgvPeliculas.ReadOnly = true;
             dgvPeliculas.Size = new Size(801, 292);
             dgvPeliculas.TabIndex = 20;
+            dgvPeliculas.CellDoubleClick += dgvPeliculas_CellDoubleClick;
             // 
             // pbCaratula
             // 
@@ -378,7 +357,9 @@
             // 
             // cmbGenero
             // 
+            cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGenero.FormattingEnabled = true;
+            cmbGenero.Items.AddRange(new object[] { "Acción", "Aventuras", "Superhéroes", "Ciencia ficción", "Romance", "Musical", "Bélico", "Documental", "Suspenso", "Horror", "Drama", "Comedia" });
             cmbGenero.Location = new Point(156, 394);
             cmbGenero.Name = "cmbGenero";
             cmbGenero.Size = new Size(95, 23);
@@ -396,7 +377,9 @@
             // 
             // cmbIdioma
             // 
+            cmbIdioma.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbIdioma.FormattingEnabled = true;
+            cmbIdioma.Items.AddRange(new object[] { "Español", "Español con subtítulos", "Inglés con subtítulos" });
             cmbIdioma.Location = new Point(156, 252);
             cmbIdioma.Name = "cmbIdioma";
             cmbIdioma.Size = new Size(121, 23);
@@ -414,7 +397,9 @@
             // 
             // cmbClasificacion
             // 
+            cmbClasificacion.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClasificacion.FormattingEnabled = true;
+            cmbClasificacion.Items.AddRange(new object[] { "A", "B", "C", "D" });
             cmbClasificacion.Location = new Point(156, 213);
             cmbClasificacion.Name = "cmbClasificacion";
             cmbClasificacion.Size = new Size(80, 23);
@@ -562,9 +547,9 @@
         private Custom_Controls.CustomButton btnSubirCaratula;
         private Custom_Controls.CustomTextbox txtNombre;
         private Custom_Controls.CustomTextbox txtDescripcion;
-        private Custom_Controls.CustomTextbox txtFechaSalida;
-        private Custom_Controls.CustomTextbox txtFechaEstreno;
         private Custom_Controls.CustomTextbox txtDuracion;
         private Button btnRegresar;
+        private DateTimePicker dtpFechaSalida;
+        private DateTimePicker dtpFechaEstreno;
     }
 }
