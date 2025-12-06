@@ -167,6 +167,7 @@
             pictureBox1.Size = new Size(293, 561);
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // LoginForm
             // 
