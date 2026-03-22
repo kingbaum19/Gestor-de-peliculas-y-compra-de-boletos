@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             panel1 = new Panel();
+            txtConfirmarContraseña = new Prototipo.Custom_Controls.CustomTextbox();
+            pictureBox1 = new PictureBox();
             btnRegresar = new Button();
             btnCrearUsuario = new Prototipo.Custom_Controls.CustomButton();
             txtContraseña = new Prototipo.Custom_Controls.CustomTextbox();
@@ -37,8 +39,6 @@
             txtApellido = new Prototipo.Custom_Controls.CustomTextbox();
             txtNombre = new Prototipo.Custom_Controls.CustomTextbox();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
-            txtConfirmarContraseña = new Prototipo.Custom_Controls.CustomTextbox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -59,6 +59,37 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(854, 564);
             panel1.TabIndex = 0;
+            // 
+            // txtConfirmarContraseña
+            // 
+            txtConfirmarContraseña.BackColor = SystemColors.Window;
+            txtConfirmarContraseña.BorderColor = Color.DarkOrchid;
+            txtConfirmarContraseña.BorderFocusColor = Color.SkyBlue;
+            txtConfirmarContraseña.BorderRadius = 0;
+            txtConfirmarContraseña.BorderSize = 2;
+            txtConfirmarContraseña.Font = new Font("Segoe UI", 10F);
+            txtConfirmarContraseña.ForeColor = SystemColors.GrayText;
+            txtConfirmarContraseña.Location = new Point(436, 404);
+            txtConfirmarContraseña.MaxLength = 128;
+            txtConfirmarContraseña.Multiline = false;
+            txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            txtConfirmarContraseña.Padding = new Padding(7);
+            txtConfirmarContraseña.PasswordChar = true;
+            txtConfirmarContraseña.PlaceholderColor = Color.DarkGray;
+            txtConfirmarContraseña.PlaceholderText = "Confirmar contraseña";
+            txtConfirmarContraseña.Size = new Size(250, 34);
+            txtConfirmarContraseña.TabIndex = 41;
+            txtConfirmarContraseña.Texto = "";
+            txtConfirmarContraseña.UnderlinedStyle = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(293, 561);
+            pictureBox1.TabIndex = 40;
+            pictureBox1.TabStop = false;
             // 
             // btnRegresar
             // 
@@ -85,6 +116,7 @@
             btnCrearUsuario.TabIndex = 21;
             btnCrearUsuario.Text = "Crear Usuario";
             btnCrearUsuario.UseVisualStyleBackColor = false;
+            btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
             // txtContraseña
             // 
@@ -96,7 +128,7 @@
             txtContraseña.Font = new Font("Segoe UI", 10F);
             txtContraseña.ForeColor = SystemColors.GrayText;
             txtContraseña.Location = new Point(436, 334);
-            txtContraseña.MaxLength = 32767;
+            txtContraseña.MaxLength = 128;
             txtContraseña.Multiline = false;
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Padding = new Padding(7);
@@ -118,7 +150,7 @@
             txtCorreo.Font = new Font("Segoe UI", 10F);
             txtCorreo.ForeColor = SystemColors.GrayText;
             txtCorreo.Location = new Point(436, 258);
-            txtCorreo.MaxLength = 32767;
+            txtCorreo.MaxLength = 254;
             txtCorreo.Multiline = false;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Padding = new Padding(7);
@@ -140,7 +172,7 @@
             txtApellido.Font = new Font("Segoe UI", 10F);
             txtApellido.ForeColor = SystemColors.GrayText;
             txtApellido.Location = new Point(436, 192);
-            txtApellido.MaxLength = 32767;
+            txtApellido.MaxLength = 254;
             txtApellido.Multiline = false;
             txtApellido.Name = "txtApellido";
             txtApellido.Padding = new Padding(7);
@@ -162,7 +194,7 @@
             txtNombre.Font = new Font("Segoe UI", 10F);
             txtNombre.ForeColor = SystemColors.GrayText;
             txtNombre.Location = new Point(436, 130);
-            txtNombre.MaxLength = 32767;
+            txtNombre.MaxLength = 254;
             txtNombre.Multiline = false;
             txtNombre.Name = "txtNombre";
             txtNombre.Padding = new Padding(7);
@@ -183,37 +215,6 @@
             label1.Size = new Size(531, 32);
             label1.TabIndex = 16;
             label1.Text = "Registro de creación de administrador";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(293, 561);
-            pictureBox1.TabIndex = 40;
-            pictureBox1.TabStop = false;
-            // 
-            // txtConfirmarContraseña
-            // 
-            txtConfirmarContraseña.BackColor = SystemColors.Window;
-            txtConfirmarContraseña.BorderColor = Color.DarkOrchid;
-            txtConfirmarContraseña.BorderFocusColor = Color.SkyBlue;
-            txtConfirmarContraseña.BorderRadius = 0;
-            txtConfirmarContraseña.BorderSize = 2;
-            txtConfirmarContraseña.Font = new Font("Segoe UI", 10F);
-            txtConfirmarContraseña.ForeColor = SystemColors.GrayText;
-            txtConfirmarContraseña.Location = new Point(436, 404);
-            txtConfirmarContraseña.MaxLength = 32767;
-            txtConfirmarContraseña.Multiline = false;
-            txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            txtConfirmarContraseña.Padding = new Padding(7);
-            txtConfirmarContraseña.PasswordChar = true;
-            txtConfirmarContraseña.PlaceholderColor = Color.DarkGray;
-            txtConfirmarContraseña.PlaceholderText = "Confirmar contraseña";
-            txtConfirmarContraseña.Size = new Size(250, 34);
-            txtConfirmarContraseña.TabIndex = 41;
-            txtConfirmarContraseña.Texto = "";
-            txtConfirmarContraseña.UnderlinedStyle = true;
             // 
             // RegisterForm
             // 

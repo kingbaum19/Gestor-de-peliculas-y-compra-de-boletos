@@ -29,6 +29,7 @@ namespace Prototipo.Custom_Controls
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+        private bool NumberOnly = false;
 
         //Constructor
         public CustomTextbox()
@@ -38,6 +39,8 @@ namespace Prototipo.Custom_Controls
 
         //Eventos
         public event EventHandler _TextChanged;
+
+        
 
         //Propiedades
         [Category("Custom textbox")]
@@ -89,6 +92,8 @@ namespace Prototipo.Custom_Controls
                 textBox1.UseSystemPasswordChar = value;
             }
         }
+
+
         [Category("Custom textbox")]
         public bool Multiline
         {
@@ -145,6 +150,7 @@ namespace Prototipo.Custom_Controls
             {
                 if (isPlaceholder) return "";
                 else return textBox1.Text;
+
             }
             set
             {
@@ -354,6 +360,7 @@ namespace Prototipo.Custom_Controls
             UpdateControlHeight();
         }
 
+
         private void UpdateControlHeight()
         {
             if (textBox1.Multiline == false)
@@ -404,10 +411,13 @@ namespace Prototipo.Custom_Controls
             SetPlaceholder();
         }
 
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (_TextChanged != null)
                 _TextChanged.Invoke(sender, e);
         }
+
+
     }
 }

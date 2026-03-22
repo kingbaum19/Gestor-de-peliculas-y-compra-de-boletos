@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VistaCliente));
             panel1 = new Panel();
-            button1 = new Button();
+            customButton1 = new Prototipo.Custom_Controls.CustomButton();
             pbCaratula1 = new PictureBox();
             pbCaratula2 = new PictureBox();
             pbCaratula3 = new PictureBox();
@@ -45,22 +46,30 @@
             // panel1
             // 
             panel1.BackColor = Color.BlueViolet;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(customButton1);
             panel1.Location = new Point(-3, -1);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
             panel1.Size = new Size(858, 38);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // customButton1
             // 
-            button1.Location = new Point(727, 10);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Iniciar sesión";
-            button1.UseVisualStyleBackColor = true;
+            customButton1.BackColor = Color.BlueViolet;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            customButton1.ForeColor = Color.White;
+            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
+            customButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton1.Location = new Point(708, -2);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new Size(150, 40);
+            customButton1.TabIndex = 0;
+            customButton1.Text = "Iniciar sesión";
+            customButton1.TextAlign = ContentAlignment.MiddleRight;
+            customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += customButton1_Click;
             // 
             // pbCaratula1
             // 
@@ -71,7 +80,7 @@
             pbCaratula1.Size = new Size(139, 204);
             pbCaratula1.TabIndex = 1;
             pbCaratula1.TabStop = false;
-            pbCaratula1.Click += pictureBox1_Click;
+            pbCaratula1.Tag = "";
             // 
             // pbCaratula2
             // 
@@ -118,6 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.GhostWhite;
             ClientSize = new Size(854, 789);
             Controls.Add(label1);
             Controls.Add(pbcaratula4);
@@ -126,7 +136,9 @@
             Controls.Add(pbCaratula1);
             Controls.Add(panel1);
             Name = "VistaCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += VistaCliente_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbCaratula1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCaratula2).EndInit();
@@ -143,7 +155,7 @@
         private PictureBox pbCaratula2;
         private PictureBox pbCaratula3;
         private PictureBox pbcaratula4;
-        private Button button1;
         private Label label1;
+        private Custom_Controls.CustomButton customButton1;
     }
 }

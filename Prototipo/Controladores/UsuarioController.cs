@@ -42,8 +42,8 @@ namespace Prototipo.Controladores
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = @"INSERT INTO Usuario(nombre, apellido, rol_id, correo, contraseña)
-                                 VALUES(@nombre,@apellido,@rol_id,@correo,@contraseña)";
+                string query = @"INSERT INTO Usuario(nombre, apellido, rol_id, correo, contraseña, creado_en)
+                                 VALUES(@nombre,@apellido,@rol_id,@correo,@contraseña,@creado_en)";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
@@ -51,6 +51,7 @@ namespace Prototipo.Controladores
                     cmd.Parameters.AddWithValue("@rol_id", usuario.RolId);
                     cmd.Parameters.AddWithValue("@correo", usuario.Correo);
                     cmd.Parameters.AddWithValue("@contraseña", usuario.Contraseña);
+                    cmd.Parameters.AddWithValue("@creado_en", usuario.CreadoEn);
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
@@ -97,7 +98,7 @@ namespace Prototipo.Controladores
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM usuario WHERE correo LIKE @correo AND contraseña LIKE @CONTRASEÑA";
+                string query = "SELECT * FROM usuario WHERE correo LIKE @correo AND contraseña LIKE @CONTRASEÑA AND rol_id = 2";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@correo", correo);

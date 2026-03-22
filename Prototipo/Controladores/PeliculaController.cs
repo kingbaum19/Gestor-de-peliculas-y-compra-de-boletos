@@ -12,6 +12,7 @@ namespace Prototipo.Controladores
 {
     public class PeliculaController : DbController
     {
+        //Cargar tabla de películas de la base de datos en el DataGridView
         public List<Pelicula> ObtenerTodas(DataGridView tablaPeliculas)
         {
             
@@ -30,6 +31,7 @@ namespace Prototipo.Controladores
             return lista;
         }
 
+        //Insertar película en la base de datos
         public bool Agregar(Pelicula p)
         {
             using (var conn = GetConnection())
@@ -54,6 +56,7 @@ namespace Prototipo.Controladores
             }
         }
 
+        //Actualizar datos
         public bool Actualizar(Pelicula p)
         {
             using (var conn = GetConnection())
@@ -81,12 +84,14 @@ namespace Prototipo.Controladores
             }
         }
 
+        //Seleccionar dato en el DataGridView
         public void seleccionarPeliculas(DataGridView tablaPeliculas, CustomTextbox txtNombre, CustomTextbox txtDuracion, DateTimePicker FechaEstreno,
             DateTimePicker FechaSalida, CustomTextbox txtDescripcion, ComboBox genero, ComboBox Clasificacion, ComboBox Idioma, ComboBox Estatus, PictureBox caratula)
         {
 
             try
             {
+                
                 txtNombre.Texto = tablaPeliculas.CurrentRow.Cells[1].Value.ToString();
                 txtDescripcion.Texto = tablaPeliculas.CurrentRow.Cells[2].Value.ToString();
                 FechaEstreno.Value = Convert.ToDateTime(tablaPeliculas.CurrentRow.Cells[3].Value.ToString());
@@ -106,6 +111,7 @@ namespace Prototipo.Controladores
             }
         }
 
+        //Cargar portada de una película mediante ID
         public void mostrarPelicula(PictureBox p, long id)
         {
             using (var conn = GetConnection())
@@ -127,42 +133,12 @@ namespace Prototipo.Controladores
             }
         }
 
-
-        public bool mostrarInformacion(Pelicula p, long id)
+        //Mostrar información técnica de la película 
+        public void mostrarDetalles(Label lbl1, Label lbl2, Label lbl3, Label lbl4, Label lbl5, TextBox txtDesc, PictureBox p, long id)
         {
             using (var conn = GetConnection())
             {
-                conn.Open();
-                string query = "SELECT nombre, duracion, idioma, categoria, descripcion FROM pelicula WHERE id_pelicula = @id;";
-                using (var cmd = new MySqlCommand(query,conn))
-                {
-                    cmd.Parameters.AddWithValue("@id", p.IdPelicula);
-                    cmd.Parameters.AddWithValue("@nombre", p.Nombre);
-                    cmd.Parameters.AddWithValue("@descripcion", p.Descripcion);
-                    cmd.Parameters.AddWithValue("@fecha_estreno", p.FechaEstreno);
-                    cmd.Parameters.AddWithValue("@salida_cartelera", p.SalidaCartelera);
-                    cmd.Parameters.AddWithValue("@duracion", p.Duracion);
-                    cmd.Parameters.AddWithValue("@categoria", p.Categoria);
-                    cmd.Parameters.AddWithValue("@clasificacion", p.Clasificacion);
-                    cmd.Parameters.AddWithValue("@portada", p.Portada);
-                    cmd.Parameters.AddWithValue("@idioma", p.Idioma);
-                    cmd.Parameters.AddWithValue("@estatus", p.Estado);
-                    
-                    return cmd.ExecuteNonQuery() > 0;
-
-                }
-
-            }
-        }
-
-        public void mostrarTitulo(Label lbl1, Label lbl2, Label lbl3, Label lbl4, TextBox lbl5, PictureBox p, long id)
-        {
-            using (var conn = GetConnection())
-            {
-                //string query = "SELECT * FROM pelicula WHERE id_pelicula";
-                // string query = "SELECT * FROM pelicula WHERE id_pelicula = 22;";// Query que si funciona
-                //string query = "SELECT * FROM pelicula WHERE id_pelicula = @id";
-                string query = "SELECT id_pelicula, nombre, duracion, clasificacion, idioma, descripcion, portada FROM pelicula WHERE id_pelicula = @id";
+                string query = "SELECT id_pelicula, nombre, duracion, categoria, clasificacion, idioma, descripcion, portada FROM pelicula WHERE id_pelicula = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 conn.Open();
@@ -176,7 +152,8 @@ namespace Prototipo.Controladores
                         lbl2.Text = reader.GetInt32("duracion").ToString() + " minutos";
                         lbl3.Text = reader.GetString("clasificacion");
                         lbl4.Text = reader.GetString("idioma");
-                        lbl5.Text = reader.GetString("descripcion");
+                        lbl5.Text = reader.GetString("categoria");
+                        txtDesc.Text = reader.GetString("descripcion");
                         p.ImageLocation = reader.GetString("portada");
 
                     }
@@ -185,7 +162,7 @@ namespace Prototipo.Controladores
             }
         }
 
-
+        //Eliminar dato de la tabla de peliculas
         public bool Eliminar(long id)
         {
             using (var conn = GetConnection())

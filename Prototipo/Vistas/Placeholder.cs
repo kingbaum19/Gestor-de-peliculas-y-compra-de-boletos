@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prototipo.Vistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,11 +33,23 @@ namespace Prototipo
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro de que quiere cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+            if (MessageBox.Show("¿Esta seguro de que quiere cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
                 MessageBox.Show("La sesión se ha cerrado exitosamente", "Cerrar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
             }
 
+
+        }
+
+        private void listaDePelículasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VistaTablas form1 = new VistaTablas();
+            form1.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

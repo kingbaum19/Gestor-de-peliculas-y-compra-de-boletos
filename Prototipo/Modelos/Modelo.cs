@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prototipo.Modelos
 {
-    internal class Modelo
+    public class Modelo
     {
     }
 }

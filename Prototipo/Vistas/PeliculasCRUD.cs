@@ -1,5 +1,7 @@
 ﻿using Prototipo.Controladores;
+using Prototipo.Custom_Controls;
 using Prototipo.Modelos;
+using Prototipo.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +32,8 @@ namespace Prototipo
             dtpFechaSalida.CustomFormat = "dd-MM-yyyy";
             dtpFechaEstreno.Format = DateTimePickerFormat.Custom;
             dtpFechaSalida.Format = DateTimePickerFormat.Custom;
-            
+
+
 
         }
 
@@ -46,6 +49,8 @@ namespace Prototipo
 
         private void listaDePeliculasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            VistaTablas form1 = new VistaTablas();
+            form1.ShowDialog(); 
 
         }
 
@@ -92,10 +97,11 @@ namespace Prototipo
         {
             txtNombre.Texto = "";
             txtDuracion.Texto = "";
-            cmbIdioma.Text = "";
-            cmbGenero.Text = "";
-            cmbEstatus.Text = "";
-            cmbClasificacion.Text = "";
+            txtDescripcion.Texto = "";
+            cmbIdioma.SelectedIndex = -1;
+            cmbGenero.SelectedIndex = -1;
+            cmbEstatus.SelectedIndex = -1;
+            cmbClasificacion.SelectedIndex = -1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -103,34 +109,37 @@ namespace Prototipo
             Pelicula pelicula = new Pelicula();
             PeliculaController controller = new PeliculaController();
             if (string.IsNullOrEmpty(txtNombre.Texto) || string.IsNullOrEmpty(txtDescripcion.Texto) ||
-                string.IsNullOrEmpty(imagePath))
+                string.IsNullOrEmpty(imagePath) || cmbClasificacion.SelectedIndex == -1 || cmbEstatus.SelectedIndex == -1 || cmbGenero.SelectedIndex == -1 || cmbIdioma.SelectedIndex == -1)
 
             {
                 MessageBox.Show("Por favor llene todos los campos para ingresar el dato", "Error al ingresar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNombre.Focus();
-                
-            }
-            try
-            {
-                pelicula.Nombre = txtNombre.Texto;
-                pelicula.Descripcion = txtDescripcion.Texto;
-                pelicula.FechaEstreno = dtpFechaEstreno.Value.Date.ToString("yyyy-MM-dd");
-                pelicula.SalidaCartelera = dtpFechaSalida.Value.Date.ToString("yyyy-MM-dd");
-                pelicula.Duracion = int.Parse(txtDuracion.Texto);
-                pelicula.Clasificacion = cmbClasificacion.GetItemText(cmbClasificacion.SelectedItem);
-                pelicula.Categoria = cmbGenero.GetItemText(cmbGenero.SelectedItem);
-                pelicula.Estado = cmbEstatus.GetItemText(cmbEstatus.SelectedItem);
-                pelicula.Idioma = cmbIdioma.GetItemText(cmbIdioma.SelectedItem);
-                pelicula.Portada = imagePath;
-                controller.Agregar(pelicula);
-                controller.ObtenerTodas(dgvPeliculas);
-                MessageBox.Show("Película agregada a la base de datos", "Insertar película", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                limpiarTexto();
 
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error al insertar datos");
+                try
+                {
+                    pelicula.Nombre = txtNombre.Texto;
+                    pelicula.Descripcion = txtDescripcion.Texto;
+                    pelicula.FechaEstreno = dtpFechaEstreno.Value.Date.ToString("yyyy-MM-dd");
+                    pelicula.SalidaCartelera = dtpFechaSalida.Value.Date.ToString("yyyy-MM-dd");
+                    pelicula.Duracion = int.Parse(txtDuracion.Texto);
+                    pelicula.Clasificacion = cmbClasificacion.GetItemText(cmbClasificacion.SelectedItem);
+                    pelicula.Categoria = cmbGenero.GetItemText(cmbGenero.SelectedItem);
+                    pelicula.Estado = cmbEstatus.GetItemText(cmbEstatus.SelectedItem);
+                    pelicula.Idioma = cmbIdioma.GetItemText(cmbIdioma.SelectedItem);
+                    pelicula.Portada = imagePath;
+                    controller.Agregar(pelicula);
+                    controller.ObtenerTodas(dgvPeliculas);
+                    MessageBox.Show("Película agregada a la base de datos", "Insertar película", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiarTexto();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error al insertar datos");
+                }
             }
 
 
@@ -161,6 +170,14 @@ namespace Prototipo
         {
             Pelicula pelicula = new Pelicula();
             PeliculaController controller = new PeliculaController();
+            if (string.IsNullOrEmpty(txtNombre.Texto) || string.IsNullOrEmpty(txtDescripcion.Texto) ||
+                string.IsNullOrEmpty(imagePath) || cmbClasificacion.SelectedIndex == -1 || cmbEstatus.SelectedIndex == -1 || cmbGenero.SelectedIndex == -1 || cmbIdioma.SelectedIndex == -1)
+
+            {
+                MessageBox.Show("Por favor llene todos los campos para ingresar el dato", "Error al ingresar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
+
+            }
             try
             {
                 pelicula.IdPelicula = Int64.Parse(dgvPeliculas.CurrentRow.Cells[0].Value.ToString());
@@ -177,7 +194,7 @@ namespace Prototipo
                 controller.Actualizar(pelicula);
                 MessageBox.Show("Película modificada con datos nuevos", "Modificar película", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 controller.ObtenerTodas(dgvPeliculas);
-                
+
             }
             catch (Exception ex)
             {
@@ -214,7 +231,6 @@ namespace Prototipo
 
 
         }
-
 
     }
 }

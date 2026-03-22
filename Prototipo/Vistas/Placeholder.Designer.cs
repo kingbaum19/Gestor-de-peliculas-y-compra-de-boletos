@@ -76,6 +76,7 @@ namespace Prototipo
             listaDePelículasToolStripMenuItem.Name = "listaDePelículasToolStripMenuItem";
             listaDePelículasToolStripMenuItem.Size = new Size(135, 20);
             listaDePelículasToolStripMenuItem.Text = "Lista de películas";
+            listaDePelículasToolStripMenuItem.Click += listaDePelículasToolStripMenuItem_Click;
             // 
             // panel1
             // 
@@ -87,6 +88,7 @@ namespace Prototipo
             panel1.Name = "panel1";
             panel1.Size = new Size(784, 537);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // btnSalir
             // 

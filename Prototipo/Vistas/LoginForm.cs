@@ -11,8 +11,8 @@ namespace Prototipo
     {
         public LoginForm()
         {
-            ConexionDB db = new ConexionDB();
-            db.GetConnection();
+            UsuarioController controller = new UsuarioController();
+
 
             InitializeComponent();
         }
@@ -78,7 +78,7 @@ namespace Prototipo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Error al iniciar sesión #3", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

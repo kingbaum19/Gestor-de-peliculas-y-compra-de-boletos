@@ -16,7 +16,7 @@ namespace Prototipo.Clases
         static string servidor = "127.0.0.1";
         static string bd = "cine";
         static string usuario = "root";
-        static string password = "root";
+        static string password = "elcholito";
         static string puerto = "3306";
 
        

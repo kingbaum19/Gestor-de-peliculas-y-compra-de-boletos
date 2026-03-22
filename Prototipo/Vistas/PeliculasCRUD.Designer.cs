@@ -39,7 +39,6 @@
             btnSubirCaratula = new Prototipo.Custom_Controls.CustomButton();
             btnEliminar = new Prototipo.Custom_Controls.CustomButton();
             btnModificar = new Prototipo.Custom_Controls.CustomButton();
-            btnGuardar = new Prototipo.Custom_Controls.CustomButton();
             label11 = new Label();
             label10 = new Label();
             cmbEstatus = new ComboBox();
@@ -61,6 +60,7 @@
             menuStrip1 = new MenuStrip();
             ediciónDePelículasToolStripMenuItem = new ToolStripMenuItem();
             listaDePeliculasToolStripMenuItem = new ToolStripMenuItem();
+            btnGuardar = new Prototipo.Custom_Controls.CustomButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCaratula).BeginInit();
@@ -145,7 +145,7 @@
             txtDescripcion.Font = new Font("Segoe UI", 10F);
             txtDescripcion.ForeColor = SystemColors.GrayText;
             txtDescripcion.Location = new Point(156, 483);
-            txtDescripcion.MaxLength = 32767;
+            txtDescripcion.MaxLength = 392;
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Padding = new Padding(7);
@@ -189,7 +189,7 @@
             txtNombre.Font = new Font("Segoe UI", 10F);
             txtNombre.ForeColor = SystemColors.GrayText;
             txtNombre.Location = new Point(156, 100);
-            txtNombre.MaxLength = 32767;
+            txtNombre.MaxLength = 150;
             txtNombre.Multiline = false;
             txtNombre.Name = "txtNombre";
             txtNombre.Padding = new Padding(7);
@@ -254,24 +254,6 @@
             btnModificar.TextAlign = ContentAlignment.MiddleRight;
             btnModificar.UseVisualStyleBackColor = false;
             btnModificar.Click += btnModificar_Click;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.BackColor = Color.BlueViolet;
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(642, 440);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(165, 43);
-            btnGuardar.TabIndex = 29;
-            btnGuardar.Text = "Guardar películas";
-            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
             // 
             // label11
             // 
@@ -494,6 +476,24 @@
             listaDePeliculasToolStripMenuItem.Text = "Lista de Peliculas";
             listaDePeliculasToolStripMenuItem.Click += listaDePeliculasToolStripMenuItem_Click;
             // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.BlueViolet;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(642, 440);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(165, 43);
+            btnGuardar.TabIndex = 29;
+            btnGuardar.Text = "Guardar película";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
             // PeliculasCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -541,7 +541,6 @@
         private Label label10;
         private ComboBox cmbEstatus;
         private Label label9;
-        private Custom_Controls.CustomButton btnGuardar;
         private Custom_Controls.CustomButton btnModificar;
         private Custom_Controls.CustomButton btnEliminar;
         private Custom_Controls.CustomButton btnSubirCaratula;
@@ -551,5 +550,6 @@
         private Button btnRegresar;
         private DateTimePicker dtpFechaSalida;
         private DateTimePicker dtpFechaEstreno;
+        private Custom_Controls.CustomButton btnGuardar;
     }
 }
