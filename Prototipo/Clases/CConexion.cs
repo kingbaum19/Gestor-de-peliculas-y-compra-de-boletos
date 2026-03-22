@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using MySql.Data.MySqlClient;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,32 +10,27 @@ namespace Prototipo.Clases
 {
     internal class CConexion
     {
-        NpgsqlConnection conn = new NpgsqlConnection();
 
-        static string servidor = "localhost";
-        static string bd = "Cinema";
-        static string usuario = "postgres";
-        static string password = "root";
-        static string puerto = "5432";
+        MySqlConnection conex = new MySqlConnection();
 
-        String cadenaConexion = "server=" + servidor + ";" + "port=" + puerto + ";" + "user id=" + usuario + ";" + "password=" + password + ";" + "database=" + bd + ";";
+        static string servidor = "127.0.0.1";
+        static string bd = "cine";
+        static string usuario = "root";
+        static string password = "elcholito";
+        static string puerto = "3306";
 
-        public NpgsqlConnection establecerConexion() {
+       
 
-            try
-            {
-                conn.ConnectionString = cadenaConexion;
-                conn.Open();
-                MessageBox.Show("Conexion con la base de datos exitosa", "Conexion con la base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (NpgsqlException e) {
-                MessageBox.Show("No se pudo conectar con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        public static MySqlConnection establecerConexion()
+        {
+  
+                string cadenaConexion = "server=" + servidor + ";" + "port=" + puerto + ";" + "user id=" + usuario + ";" + "password=" + password + ";" + "database=" + bd + ";";
+                MySqlConnection conexion = new MySqlConnection(cadenaConexion);
+                MessageBox.Show("Acceso correcto a la base de datos", "Conexión a la base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return conexion;
+            
 
-
-
-
-            }
-            return conn;
+            
         }
     }
 }
